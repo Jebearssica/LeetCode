@@ -4,7 +4,7 @@ an exercise a day, keep the rubbish away
 
 ## Plan
 
-an exercise a day(by Tag), after 10 exercises change the tag.
+an exercise a day(by Tag), after 10 exercises change the tag and PR the dev branch.
 
 Keep writing notes after every exercise
 

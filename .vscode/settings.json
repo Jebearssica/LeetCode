@@ -62,7 +62,9 @@
         "xmemory0": "cpp",
         "xstddef": "cpp",
         "xstring": "cpp",
-        "xtr1common": "cpp"
+        "xtr1common": "cpp",
+        "iterator": "cpp",
+        "unordered_map": "cpp"
     },
     "editor.tabSize": 4
 }
