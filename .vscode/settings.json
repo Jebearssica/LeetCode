@@ -64,7 +64,20 @@
         "xstring": "cpp",
         "xtr1common": "cpp",
         "iterator": "cpp",
-        "unordered_map": "cpp"
+        "unordered_map": "cpp",
+        "ios": "cpp",
+        "iostream": "cpp",
+        "istream": "cpp",
+        "memory": "cpp",
+        "ostream": "cpp",
+        "streambuf": "cpp",
+        "system_error": "cpp",
+        "typeinfo": "cpp",
+        "xfacet": "cpp",
+        "xiosbase": "cpp",
+        "xlocale": "cpp",
+        "xlocinfo": "cpp",
+        "xlocnum": "cpp"
     },
     "editor.tabSize": 4
 }
