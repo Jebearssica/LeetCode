@@ -78,7 +78,8 @@
         "xlocale": "cpp",
         "xlocinfo": "cpp",
         "xlocnum": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "bitset": "cpp"
     },
     "editor.tabSize": 4,
 }
