@@ -80,7 +80,8 @@
         "xlocnum": "cpp",
         "string": "cpp",
         "bitset": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "deque": "cpp"
     },
     "editor.tabSize": 4,
 }
