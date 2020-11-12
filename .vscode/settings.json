@@ -79,7 +79,9 @@
         "xlocinfo": "cpp",
         "xlocnum": "cpp",
         "string": "cpp",
-        "bitset": "cpp"
+        "bitset": "cpp",
+        "stack": "cpp",
+        "deque": "cpp"
     },
     "editor.tabSize": 4,
 }
