@@ -54,7 +54,8 @@
 			"string": "cpp",
 			"bitset": "cpp",
 			"stack": "cpp",
-			"deque": "cpp"
+			"deque": "cpp",
+			"queue": "cpp"
 		}
 	}
 }
