@@ -75,25 +75,18 @@
 class Solution
 {
 public:
-    int idx = -1;
-    ListNode *traverse(ListNode *head, int n)
-    {
-        if (head == nullptr)
-        {
-            return nullptr;
-        }
-        ListNode *nextNode = traverse(head->next, n);
-        idx++;
-        if (n == idx)
-        {
-            head->next = nextNode->next;
-        }
-        return head;
-    }
     ListNode *removeNthFromEnd(ListNode *head, int n)
     {
-        ListNode *dummyNode = new ListNode(-1, head);
-        return traverse(dummyNode, n)->next;
+        ListNode *fast = head, *dummyNode = new ListNode(0, head), *slow = dummyNode;
+        while (--n > 0)
+            fast = fast->next;
+        while (fast != nullptr && fast->next != nullptr)
+        {
+            fast = fast->next;
+            slow = slow->next;
+        }
+        slow->next = slow->next->next;
+        return dummyNode->next;
     }
 };
 // @lc code=end
