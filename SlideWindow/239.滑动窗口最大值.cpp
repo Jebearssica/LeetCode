@@ -76,11 +76,135 @@
  */
 
 // @lc code=start
-class Solution {
-public:
-    vector<int> maxSlidingWindow(vector<int>& nums, int k) {
+#include <queue>
+using namespace std;
+// class Node
+// {
+// public:
+//     int val;
+//     Node *next, *prev;
+//     Node(int val) : val(val), next(nullptr), prev(nullptr)
+//     {
+//     }
+// };
+// //overrride STL:deque
+// class DoubleLinkList
+// {
+// private:
+//     Node *head, *tail;
+//     int _size;
 
+// public:
+//     int size()
+//     {
+//         return this->_size;
+//     }
+//     void pushLast(int n)
+//     {
+//         Node *add = new Node(n);
+//         add->prev = this->tail->prev;
+//         add->next = this->tail;
+//         this->tail->prev->next = add;
+//         this->tail->prev = add;
+//         this->_size++;
+//     }
+//     int getLast()
+//     {
+//         return this->tail->prev->val;
+//     }
+//     int getFirst()
+//     {
+//         return this->head->next->val;
+//     }
+//     void popLast()
+//     {
+//         Node *last = this->tail->prev;
+//         last->prev->next = last->next;
+//         last->next->prev = last->prev;
+//         this->_size--;
+//     }
+//     void popFirst()
+//     {
+//         Node *first = this->head->next;
+//         first->prev->next = first->next;
+//         first->next->prev = first->prev;
+//         this->_size--;
+//     }
+//     DoubleLinkList() : _size(0)
+//     {
+//         this->head = new Node(0);
+//         this->tail = new Node(0);
+//         this->head->next = this->tail;
+//         this->tail->prev = this->head;
+//     }
+//     ~DoubleLinkList() {}
+// };
+// class MonotoneQueue
+// {
+// private:
+//     DoubleLinkList dll;
+
+// public:
+//     void push(int n)
+//     {
+//         while (this->dll.size() != 0 && this->dll.getLast() < n)
+//             this->dll.popLast();
+//         this->dll.pushLast(n);
+//     }
+//     void pop(int n)
+//     {
+//         if (n == this->dll.getFirst())
+//             this->dll.popFirst();
+//     }
+//     int maxValue()
+//     {
+//         return this->dll.getFirst();
+//     }
+//     MonotoneQueue() {}
+//     ~MonotoneQueue() {}
+// };
+class MonotoneQueue
+{
+private:
+    deque<int> q;
+
+public:
+    void push(int n)
+    {
+        while (!q.empty() && q.back() < n)
+            this->q.pop_back();
+        this->q.push_back(n);
+    }
+    void pop(int n)
+    {
+        if (n == this->q.front())
+            this->q.pop_front();
+    }
+    int maxValue()
+    {
+        return this->q.front();
+    }
+    MonotoneQueue() {}
+    ~MonotoneQueue() {}
+};
+class Solution
+{
+public:
+    vector<int> maxSlidingWindow(vector<int> &nums, int k)
+    {
+        MonotoneQueue q;
+        vector<int> res;
+
+        for (int idx = 0; idx < nums.size(); idx++)
+        {
+            q.push(nums[idx]);
+            if (idx >= k - 1)
+            {
+                res.push_back(q.maxValue());
+                q.pop(nums[idx - k + 1]);
+            }
+        }
+        return res;
     }
 };
 // @lc code=end
-
